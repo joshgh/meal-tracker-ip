@@ -5,11 +5,9 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   template: `
   <h3>Meals</h3>
-  <div *ngFor="let meal of meals">
-    <h4>{{meal.name}}</h4>
-    <p>{{meal.details}}</p>
-    <p>{{meal.calories}}</p>
-  </div>
+  <meal-display *ngFor="let meal of meals"
+    [meal]="meal"
+  ></meal-display>
   `
 })
 
