@@ -9,10 +9,15 @@ import { Meal } from './meal.model';
   <meal-list
     [meals]="meals"
   ></meal-list>
+  <add-meal
+    (newMealSender)="addMeal($event)"
+  ></add-meal>
   `
 })
 
 export class AppComponent {
   public meals: Meal[] = [new Meal("Hamburger", "Didn't get a soda or cheese on my burger!", 560), new Meal("Fries", "I only ate half of them", 365)];
-
+  addMeal(meal: Meal){
+    this.meals.push(meal);
+  }
 }
