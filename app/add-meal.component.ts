@@ -13,15 +13,16 @@ import { Meal } from './meal.model';
       <label for="calories">Calories:</label>
       <input id="calories" type="number" #inputCalories>
       <button (click)="createMeal(inputName.value, inputDetails.value, inputCalories.value);
-      inputName.value='';
-      inputDetails.value='';
-      inputCalories.value='';" type="button">Add</button>
+        inputName.value='';
+        inputDetails.value='';
+        inputCalories.value='';" type="button">Add</button>
     </div>
   `
 })
 
 export class AddMealComponent {
   @Output() newMealSender = new EventEmitter();
+
   createMeal(name, details, calories) {
     var newMeal = new Meal(name, details, parseInt(calories));
     this.newMealSender.emit(newMeal);

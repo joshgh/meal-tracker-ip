@@ -37,6 +37,7 @@ export class AppComponent implements OnInit{
   public avgCalories: number;
   public meals: Meal[] = [new Meal("Hamburger", "Didn't get a soda or cheese on my burger!", 600), new Meal("Fries", "I only ate half of them", 400)];
   public selectedMeal: Meal = null;
+
   ngOnInit(){
     this.updateCalories();
   }
@@ -48,6 +49,7 @@ export class AppComponent implements OnInit{
     }
     return this.totalCalories;
   }
+
   calculateAvg(){
     if(this.meals){
       this.avgCalories = Math.round(this.calculateTotal() / this.meals.length);
@@ -55,21 +57,26 @@ export class AppComponent implements OnInit{
       this.avgCalories = 0;
     }
   }
+
   updateCalories(){
     this.calculateTotal();
     this.calculateAvg();
   }
+
   addMeal(meal: Meal){
     this.meals.push(meal);
     this.toggleNewMeal();
     this.updateCalories();
   }
+
   toggleNewMeal(){
     this.addMealForm = !this.addMealForm;
   }
+
   selectMeal(meal){
     this.selectedMeal = meal;
   }
+
   doneEditing(){
     this.selectedMeal = null;
     this.updateCalories();

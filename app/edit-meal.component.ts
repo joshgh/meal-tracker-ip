@@ -20,6 +20,7 @@ import { Meal } from './meal.model';
 export class EditMealComponent {
   @Input() mealToEdit: Meal;
   @Output() doneEditSender = new EventEmitter();
+
   doneEditing(){
     this.doneEditSender.emit();
   }

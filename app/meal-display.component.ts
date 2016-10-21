@@ -17,6 +17,7 @@ import { Meal } from './meal.model';
 export class MealDisplayComponent {
   @Input() meal: Meal;
   @Output() editMealEvent = new EventEmitter();
+
   editMeal(meal){
     this.editMealEvent.emit(meal);
   }

@@ -26,9 +26,11 @@ export class MealListComponent {
   @Input() avgCalories: number;
   @Output() editMealEvent = new EventEmitter();
   public calorieDisplay: string = "all"
+
   setFilter(value){
     this.calorieDisplay = value;
   }
+
   editMeal(meal){
     this.editMealEvent.emit(meal);
   }
