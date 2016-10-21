@@ -8,8 +8,8 @@ import { Meal } from './meal.model';
     <h4>{{meal.name}}
       <button (click)="editMeal(meal)">Edit</button>
     </h4>
-    <p>{{meal.details}}</p>
-    <p>{{meal.calories}}</p>
+    <p>Details: {{meal.details}}</p>
+    <p>Calories: {{meal.calories}}</p>
   </div>
   `
 })

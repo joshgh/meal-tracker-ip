@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Meal } from './meal.model';
 
 @Component({
@@ -11,6 +11,8 @@ import { Meal } from './meal.model';
       <div class="col-sm-6">
         <meal-list
           [meals]="meals"
+          [totalCalories]="totalCalories"
+          [avgCalories]="avgCalories"
           (editMealEvent)="selectMeal($event)"
         ></meal-list>
         <button (click)="toggleNewMeal()">Add Meal</button>
@@ -29,13 +31,38 @@ import { Meal } from './meal.model';
   `
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   public addMealForm: boolean = false;
-  public meals: Meal[] = [new Meal("Hamburger", "Didn't get a soda or cheese on my burger!", 560), new Meal("Fries", "I only ate half of them", 365)];
+  public totalCalories: number;
+  public avgCalories: number;
+  public meals: Meal[] = [new Meal("Hamburger", "Didn't get a soda or cheese on my burger!", 600), new Meal("Fries", "I only ate half of them", 400)];
   public selectedMeal: Meal = null;
+  ngOnInit(){
+    this.updateCalories();
+  }
+
+  calculateTotal(){
+    this.totalCalories = 0;
+    for(var i = 0; i < this.meals.length; i++){
+      this.totalCalories+= this.meals[i].calories;
+    }
+    return this.totalCalories;
+  }
+  calculateAvg(){
+    if(this.meals){
+      this.avgCalories = Math.round(this.calculateTotal() / this.meals.length);
+    } else {
+      this.avgCalories = 0;
+    }
+  }
+  updateCalories(){
+    this.calculateTotal();
+    this.calculateAvg();
+  }
   addMeal(meal: Meal){
     this.meals.push(meal);
     this.toggleNewMeal();
+    this.updateCalories();
   }
   toggleNewMeal(){
     this.addMealForm = !this.addMealForm;
@@ -45,5 +72,6 @@ export class AppComponent {
   }
   doneEditing(){
     this.selectedMeal = null;
+    this.updateCalories();
   }
 }

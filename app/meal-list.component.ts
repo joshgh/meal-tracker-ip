@@ -5,6 +5,8 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   template: `
   <h3>Meals</h3>
+  <p>Total Calories: {{ totalCalories }}</p>
+  <p>Average Calories: {{ avgCalories }}</p>
   <label for='select-calories'>Filter by calorie level:</label>
   <select (change)="setFilter($event.target.value)" name='select-calories' id='select-calories'>
     <option value="all">All</option>
@@ -20,6 +22,8 @@ import { Meal } from './meal.model';
 
 export class MealListComponent {
   @Input() meals: Meal[];
+  @Input() totalCalories: number;
+  @Input() avgCalories: number;
   @Output() editMealEvent = new EventEmitter();
   public calorieDisplay: string = "all"
   setFilter(value){
