@@ -28,6 +28,10 @@ input {
   margin-bottom: 5px;
 }
 
+.jumbotron {
+  background-color: #b2b2b2;
+}
+
 .meal-card {
   border: 1px solid #50394c;
   border-radius: 5px;
