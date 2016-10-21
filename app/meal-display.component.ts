@@ -1,11 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Meal } from './meal.model';
 
 @Component({
   selector: 'meal-display',
   template: `
   <div>
-    <h4>{{meal.name}}</h4>
+    <h4>{{meal.name}}
+      <button (click)="editMeal(meal)">Edit</button>
+    </h4>
     <p>{{meal.details}}</p>
     <p>{{meal.calories}}</p>
   </div>
@@ -14,4 +16,8 @@ import { Meal } from './meal.model';
 
 export class MealDisplayComponent {
   @Input() meal: Meal;
+  @Output() editMealEvent = new EventEmitter();
+  editMeal(meal){
+    this.editMealEvent.emit(meal);
+  }
 }

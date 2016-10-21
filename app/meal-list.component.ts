@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Meal } from './meal.model';
 
 @Component({
@@ -13,14 +13,19 @@ import { Meal } from './meal.model';
   </select>
   <meal-display *ngFor="let meal of meals | caloriesFilter:calorieDisplay"
     [meal]="meal"
+    (editMealEvent)="editMeal($event)"
   ></meal-display>
   `
 })
 
 export class MealListComponent {
   @Input() meals: Meal[];
+  @Output() editMealEvent = new EventEmitter();
   public calorieDisplay: string = "all"
   setFilter(value){
     this.calorieDisplay = value;
+  }
+  editMeal(meal){
+    this.editMealEvent.emit(meal);
   }
 }
