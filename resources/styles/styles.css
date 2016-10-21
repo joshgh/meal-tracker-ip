@@ -16,6 +16,18 @@ h1 {
   text-align: center;
 }
 
+label, input {
+  display: block;
+}
+
+label {
+  margin-bottom: 2px;
+}
+
+input {
+  margin-bottom: 5px;
+}
+
 .meal-card {
   border: 1px solid #50394c;
   border-radius: 5px;
