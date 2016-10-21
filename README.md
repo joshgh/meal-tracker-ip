@@ -11,11 +11,18 @@ _This webpage allows a user to input information about meals they eat during a d
 ## Setup/Installation Requirements
 
 * Clone repository to local machine
+`git clone https://github.com/joshgh/meal-tracker-ip`
 * Make sure you have node.js, npm, and bower installed
-* Open a terminal window, navigate to top level of project folder
-* Run "npm install"
-* Run "bower install"
-* Run "gulp build"
+```
+node -v
+npm -v
+bower -v
+```
+* Navigate to top level of project folder
+`cd meal-tracker-ip`
+* Run `npm install`
+* Run `bower install`
+* Run `gulp build`
 * Open index.html in your web browser
 
 ## Specifications

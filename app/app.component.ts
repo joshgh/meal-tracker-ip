@@ -6,7 +6,7 @@ import { Meal } from './meal.model';
   template: `
   <div class="container">
     <h1>Meal Tracker</h1>
-    <h2>Enter information about meals you eat so you can track them</h2>
+    <h2>Keep track of your meals throughout the day</h2>
     <div class="row">
       <div class="col-sm-6">
         <meal-list
