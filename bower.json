@@ -1,0 +1,17 @@
+{
+  "name": "angular2-skeleton",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Joshua Huffman <j.m.huffman@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/joshgh/angular-template",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
