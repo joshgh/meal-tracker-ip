@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   template: `
   <h3>Meals</h3>
-  <meal-display *ngFor="let meal of meals"
+  <meal-display *ngFor="let meal of meals | caloriesFilter:'high'"
     [meal]="meal"
   ></meal-display>
   `
