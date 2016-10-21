@@ -4,20 +4,28 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'my-app',
   template: `
-  <h1>Meal Tracker</h1>
-  <h2>Enter information about meals you eat so you can track them</h2>
-  <meal-list
-    [meals]="meals"
-    (editMealEvent)="selectMeal($event)"
-  ></meal-list>
-  <button (click)="toggleNewMeal()">Add Meal</button>
-  <add-meal *ngIf="addMealForm"
-    (newMealSender)="addMeal($event)"
-  ></add-meal>
-  <edit-meal *ngIf="selectedMeal"
-    [mealToEdit]="selectedMeal"
-    (doneEditSender)="doneEditing()"
-  ></edit-meal>
+  <div class="container">
+    <h1>Meal Tracker</h1>
+    <h2>Enter information about meals you eat so you can track them</h2>
+    <div class="row">
+      <div class="col-sm-6">
+        <meal-list
+          [meals]="meals"
+          (editMealEvent)="selectMeal($event)"
+        ></meal-list>
+        <button (click)="toggleNewMeal()">Add Meal</button>
+        <add-meal *ngIf="addMealForm"
+          (newMealSender)="addMeal($event)"
+        ></add-meal>
+      </div>
+      <div class="col-sm-6">
+        <edit-meal *ngIf="selectedMeal"
+          [mealToEdit]="selectedMeal"
+          (doneEditSender)="doneEditing()"
+        ></edit-meal>
+      </div>
+    </div>
+  </div>
   `
 })
 

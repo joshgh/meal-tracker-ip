@@ -4,7 +4,7 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'meal-display',
   template: `
-  <div>
+  <div class="meal-card">
     <h4>{{meal.name}}
       <button (click)="editMeal(meal)">Edit</button>
     </h4>

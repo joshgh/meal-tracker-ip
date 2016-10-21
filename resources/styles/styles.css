@@ -1,3 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #ffef96;
+}
+
 h1 {
-  color: blue;
+  color: #50394c;
+  text-align: center;
+}
+
+.meal-card {
+  border: 1px solid #50394c;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 3px;
+  background-color: #f4e1d2;
+  color: black;
 }

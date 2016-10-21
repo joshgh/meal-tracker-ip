@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   template: `
   <h3>Meals</h3>
-  <label for='select-calories'>Show meals with:</label>
+  <label for='select-calories'>Filter by calorie level:</label>
   <select (change)="setFilter($event.target.value)" name='select-calories' id='select-calories'>
     <option value="all">All</option>
     <option value="low">Low Calories</option>
